@@ -35,15 +35,31 @@
             */
             /* Use this for real authentication
              ----------------------------------------------*/
-            $http.get('/Thingworx/Composer/index.html',
-            { headers: {
-              'Authorization': 'Basic '+Base64.encode(username + ':' + password),
-              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-              'Connection': 'keep-alive'
-              }
-            }).success(function (response) {
-                   callback(response);
-               });
+            //$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+            // $http.get('/Thingworx/Server',
+            // { headers: {
+            //   'Authorization': 'Basic '+Base64.encode(username + ':' + password),
+            //   'Accept': 'application/json',
+            //   'Connection': 'keep-alive'
+            //   }
+            // }).success(function (response) {
+            //        callback(response);
+            //    });
+
+
+           $http({
+             method: 'GET',
+             url: '/Thingworx/Server',
+             headers: {
+               'Authorization': 'Basic '+Base64.encode(username + ':' + password),
+               //'Connection': 'keep-alive',
+               'Accept': 'application/json'
+               }
+           }).then(function successCallback(response) {
+               callback(response);
+             }, function errorCallback(response) {
+               callback(response);
+           });
 
         }
 

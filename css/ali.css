@@ -1,0 +1,104 @@
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+.new{
+    
+    left: 35%;
+    top:5%;
+}
+.isVisible{
+    
+    visibility: hidden;
+}
+
+.staffIdErrorMessage{
+     
+ left:30%;
+}
+
+.red{
+    
+    background-color:#e20000;
+    color:white;
+    
+}
+
+.form-control{
+    
+    display: inline;
+}
+
+.block{
+    
+    display: block;
+}
+
+label,h3{
+    
+   color:#e20000; 
+}
+
+.btn{
+    background-color: #e20000;
+    color: white;
+}
+
+.inline{
+    
+    display: inline;
+}
+.relative{
+   
+    position:relative;
+    
+}
+
+.employeesErrorMessage{
+    
+   color: #e20000;
+    font-size: 20px;
+    height: 20px;
+    
+}
+
+.formbutton{
+    
+    left:100px;
+}
+
+.emailsPublisherImage{
+    
+    left:200px;
+}
+
+.applicableForCheckBoxes{
+    
+    width:300px;
+    left:100px;
+    
+}
+
+.mixMaxDropDownLists{
+    
+    width:100px;
+  
+}
+
+.QuestionManagerSelect{
+    
+    left:42px;
+}
+
+.contentErrorMessage{
+    
+    left:-14px;
+}
+
+
+
+
+
+

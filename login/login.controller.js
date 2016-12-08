@@ -19,7 +19,7 @@
         function login() {
             vm.dataLoading = true;
             AuthenticationService.Login(vm.username, vm.password, function (response) {
-                if (response.success) {
+                if (response.status >= 200 && response.status < 300) {
                     AuthenticationService.SetCredentials(vm.username, vm.password);
                     $location.path('/');
                 } else {
