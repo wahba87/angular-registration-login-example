@@ -19,6 +19,7 @@
 
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
+             /*
             $timeout(function () {
                 var response;
                 UserService.GetByUsername(username)
@@ -31,13 +32,18 @@
                         callback(response);
                     });
             }, 1000);
-
+            */
             /* Use this for real authentication
              ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
+            $http.get('/Thingworx/Composer/index.html',
+            { headers: {
+              'Authorization': 'Basic '+Base64.encode(username + ':' + password),
+              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+              'Connection': 'keep-alive'
+              }
+            }).success(function (response) {
+                   callback(response);
+               });
 
         }
 
